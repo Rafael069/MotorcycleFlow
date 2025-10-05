@@ -6,4 +6,16 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Entities\BaseEntity.cs.cs~RF1933c8.TMP" />
+    <None Remove="Entities\BaseEntity.cs.cs~RF441d9f.TMP" />
+    <None Remove="Entities\Motorcycle.cs~RF473bd7.TMP" />
+    <None Remove="Entities\Rental.cs~RF2adf38.TMP" />
+    <None Remove="Enums\RentalPlanEnum.cs~RF15502d.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Exceptions\" />
+  </ItemGroup>
+
 </Project>

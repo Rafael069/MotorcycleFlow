@@ -1,4 +1,8 @@
 
+using Microsoft.EntityFrameworkCore;
+using MotorcycleFlow.Infrastructure.Data;
+
+
 namespace MotorcycleFlow.API
 {
     public class Program
@@ -6,6 +10,10 @@ namespace MotorcycleFlow.API
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            // Add DbContext
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSQL")));
 
             // Add services to the container.
 
