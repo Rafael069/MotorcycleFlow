@@ -40,18 +40,18 @@ namespace MotorcycleFlow.Application.Services
 
             if (actualReturnDate < rental.ExpectedEndDate)
             {
-                // Devolução antecipada - aplicar multa
+                // Early return - apply fine
                 var penalty = CalculateEarlyReturnPenalty(rental, actualReturnDate);
                 return baseCost - penalty;
             }
             else if (actualReturnDate > rental.ExpectedEndDate)
             {
-                // Devolução tardia - aplicar multa por dia adicional
+                // Late return - apply fine for additional day
                 var penalty = CalculateLateReturnPenalty(rental, actualReturnDate);
                 return baseCost + penalty;
             }
 
-            // Devolução no prazo
+            // Return on time
             return baseCost;
         }
 
