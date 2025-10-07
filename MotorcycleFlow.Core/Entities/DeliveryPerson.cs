@@ -16,7 +16,7 @@ namespace MotorcycleFlow.Core.Entities
         public DateTime BirthDate { get; set; }
         public string DriverLicenseNumber { get; set; }
         public DriverLicenseTypeEnum DriverLicenseType { get; set; }
-        public string DriverLicenseImageUrl { get; set; }
+        public string DriverLicenseImageUrl { get; set; } = string.Empty;
         public ICollection<Rental> Rentals { get; set; }
 
         public DeliveryPerson(string identifier, string name, string cNPJ, DateTime birthDate,

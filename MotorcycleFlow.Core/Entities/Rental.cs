@@ -24,13 +24,14 @@ namespace MotorcycleFlow.Core.Entities
         public Motorcycle Motorcycle { get; set; }
 
         // Builder to create new rentals
-        public Rental(string deliveryPersonId, string motorcycleId, DateTime startDate,
-                     DateTime expectedEndDate, RentalPlanEnum plan)
+        public Rental(string deliveryPersonId, string motorcycleId, DateTime startDate, DateTime endDate,
+                     DateTime expectedEndDate, RentalPlanEnum plan, decimal totalCost, RentalStatusEnum status)
 
         {
             DeliveryPersonId = deliveryPersonId;
             MotorcycleId = motorcycleId;
             StartDate = startDate;
+            EndDate = endDate;
             ExpectedEndDate = expectedEndDate;
             Plan = plan;
             Status = RentalStatusEnum.Active; // Default
