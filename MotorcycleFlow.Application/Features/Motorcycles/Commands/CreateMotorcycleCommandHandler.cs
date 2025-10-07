@@ -26,14 +26,14 @@ namespace MotorcycleFlow.Application.Features.Motorcycles.Commands
         {
             try
             {
-                // 1. Validar se placa já existe
+                // 1. Validate if plate already exists
                 var existingMotorcycle = await _motorcycleRepository.GetByLicensePlateAsync(request.LicensePlate);
                 if (existingMotorcycle != null)
                 {
                     return Result<MotorcycleDto>.Failure(Error.Conflict);
                 }
 
-                // 2. Criar a moto
+                // 2. Create the motorcycle
                 var motorcycle = new Motorcycle(
                     identifier: request.Identifier,
                     year: request.Year,
@@ -41,10 +41,10 @@ namespace MotorcycleFlow.Application.Features.Motorcycles.Commands
                     licensePlate: request.LicensePlate.ToUpper()
                 );
 
-                // 3. Salvar no banco
+                // 3. Save motorcycle
                 await _motorcycleRepository.AddAsync(motorcycle);
 
-                // 4. Retornar DTO
+                // 4. Return DTO
                 var motorcycleDto = new MotorcycleDto
                 {
                     Id = motorcycle.Id,
