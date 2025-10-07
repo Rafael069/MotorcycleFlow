@@ -6,4 +6,21 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Features\DeleveryPerson\DTOs\DeliveryPersonDto.cs~RF132b69d.TMP" />
+    <None Remove="Features\DeleveryPerson\DTOs\DeliveryPersonDto.cs~RF13421e5.TMP" />
+    <None Remove="Features\Motorcycles\Commands\DeleteMotorcycleCommandHandler.cs~RF119d654.TMP" />
+    <None Remove="Features\Motorcycles\Commands\UpdateLicensePlateCommand.cs~RF11ef974.TMP" />
+    <None Remove="Features\Motorcycles\Queries\GetMotorcycleByIdQuery.cs~RF41d4ae2.TMP" />
+    <None Remove="Interfaces\IRentalCalculatorService.cs~RF195419b.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MotorcycleFlow.Core\MotorcycleFlow.Core.csproj" />
+  </ItemGroup>
+
 </Project>
